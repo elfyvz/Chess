@@ -1,0 +1,430 @@
+/*************** Font Family *****************/
+
+.rubik-beastly-regular {
+    font-family: "Rubik Beastly", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.slackey-regular {
+    font-family: "Slackey", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.madimi-one-regular {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/****************** Colors ********************/
+
+:root {
+    --dark-bg: #0a555d;
+    --light-bg: #84C9C9;
+    --black: #0D2323;
+    --white: #d3ebeb;
+}
+
+
+/******************* Body *********************/
+
+body {
+    margin: 0;
+    background: var(--light-bg);
+    display: flex;
+    justify-content: space-between; 
+}
+
+
+/****************** Header ********************/
+
+#header {
+    min-height: 100vh;
+    width: 20%;
+    max-width: 240px;
+    background: #0c6b75;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /*position: fixed;*/
+}
+
+.logo {
+    width: 100%;
+    margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.logo a {
+    font-size: 3em;
+    text-decoration: none;
+	color: #ffffff;
+    /*color: rgb(202, 235, 241);*/
+    margin: auto;
+    text-align: center;
+}
+
+.profile {
+    background: #0a555d;
+    border-radius: .7em;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    text-decoration: none;
+    /*max-width: 90%;*/
+}
+
+.profile-link {
+    text-decoration: none;
+}
+
+.profile i {
+    font-size: 36px;
+    color: white;
+    border: 2px solid;
+    padding: 20px;
+    border-radius: .5em;
+    text-align: center;
+}
+
+.profile h1 {
+    color: white;
+}
+
+.navbar nav ul {
+    list-style-type: none;
+}
+
+.navbar nav li {
+    padding-bottom: 20px; 
+    margin-left: -20px;
+}
+
+.navbar nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-family: "Slackey", sans-serif;
+}
+
+.navbar nav li i {
+	color: white;
+   /* color: rgb(13, 58, 74);*/
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+
+/******************* Main *********************/
+
+#main {
+    width: 100%;
+    min-height: 100vh;
+    /*float: right;*/
+    /* padding: 100px; */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    /*float: right;*/
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+/********** Chess Board *********/
+
+.chess-board {
+    width: 70%;
+    max-width: 700px;
+    min-height: 100%;
+    margin-right: 50px;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;*/
+    /*min-height: 100vh;*/
+    /* padding-top: 30px; */
+}
+
+.chess-board h1 {
+    background: #d3ebeb;
+    color: #0D2323;
+    border-radius: .5em;
+    padding: 20px 0 20px 20px;
+    height: 35%;
+    width: 73vh;
+    /*margin: auto;*/
+}
+
+.chess-board .white-side {
+    background: #0D2323;
+}
+
+.chessBoard {
+    width: 75vh;
+    height: 75vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    width: 12.5%;
+    height: 12.5%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.white {
+    background-color: #d3ebeb;
+}
+
+.black {
+    background-color: #0D2323;
+}
+
+.coordinate {
+    height: auto;
+    display: flex;
+    bottom: 4%;
+    left: 4%;
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Madimi One", sans-serif;
+}
+
+.rank {
+    top: 4%;
+    right: 4%;
+    left: auto;
+}
+
+.whiteText {
+    color: #d3ebeb;
+}
+
+.blackText {
+    color: #0D2323;
+}
+
+.piece {
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.piece img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+#alert {
+    position: absolute;
+    color: whitesmoke;
+    width: 33%;
+    height: 12%;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    z-index: 2000;
+    top: 40%;
+    display: none;
+    background: #008080bf;
+    border-radius: .7em;
+    align-items: center;
+    font-family: "Madimi One", sans-serif;
+}
+
+@media (max-width:600px) {
+    .coordinate {
+        font-size: 8px;
+    }
+}
+
+.promotionOption {
+    border-radius: 50%;
+    background-color: darkgray;
+    transition: transform 0.2s;
+    position: absolute;
+    z-index: 1000;
+}
+
+.promotionOption:hover {
+        cursor: pointer;
+        border-radius: 0%;
+        background-color: #539B0C;
+        width: 100%;
+    }
+
+.promotionOption img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    margin: 20px 0px 0px 20px;
+}
+
+.buttonContainer button {
+    width: 120px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(87,64,64);
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.buttonContainer select {
+    width: 120px;
+    height: 40px;
+    background-color: whitesmoke;
+}
+
+div:has(>#levelLabel) {
+    margin-bottom: 5px;
+}
+
+@media (min-width:600px) {
+    /*.chessBoard {
+        width: 600px;
+        height: 600px;
+    }*/
+
+    #alert {
+        width: 450px;
+        height: 80px;
+    }
+}
+
+@media (max-width:600px) {
+    .coordinate {
+        font-size: 8px;
+    }
+
+    #alert {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 10px;
+    }
+
+    .buttonContainer {
+        flex-direction: row;
+        align-items: last baseline;
+        justify-content: center;
+        width: 80vw;
+    }
+
+        .buttonContainer button, .buttonContainer select {
+            width: 20vw;
+            margin-right: 5px;
+        }
+}
+
+
+/********************* Aside *******************/
+
+.sidebar {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 400px;
+    background: var(--dark-bg);
+    border-radius: .7em;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h1 {
+    height: 10%;
+    color: #d3ebeb;
+    text-align: center;
+}
+
+.sidebar img {
+    height: 30%;
+}
+
+.sidebar .movement-record {
+    height: 40%;
+    color: #d3ebeb;
+}
+
+.sidebar .button {
+    height: 10%;
+    width: 100%;
+    border: 2px solid #40ac60;
+    border-radius: .5em;
+    background: #08E195;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #d3ebeb;
+    font-family: "Madimi One", sans-serif;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    #header {
+        visibility: hidden;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .chess-board {
+        width: 90%;
+    }
+
+    .sidebar {
+        max-width: 100%;
+        width:100%;
+    }
+}
+
+
+
+.highlight {
+    background-color: yellow; /* Or any color you prefer for highlighting */
+}
